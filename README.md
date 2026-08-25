@@ -4,9 +4,9 @@ This is not a copy of the official starter.
 I went through the whole flow on Linux, inspected the code, generated my own key, signed messages, and wrote down what actually mattered so other builders can move faster without repeating the same mistakes.
 
 **My public DID (do not copy this, generate yours):**  
-`did:key:z6MkpLXifcnATwxcu1Dx6vsdccwb7qYtZNK9zGSVabSLLvQa`
+`did:key:z6MkubpXm6LYpbK52gxqytrhPXizzCJGDrAN1ns4ADUQnsVc`
 
-Official tool lives here: https://github.com/zunmax/technocore-did-starter  
+Official tool lives here: https://github.com/surixbt/technocore-did-guide  
 Everything below assumes you are running the original tool. Do not fork the private key or reuse someone else’s DID.
 
 ---
@@ -132,7 +132,7 @@ The signed message alone is not enough. Create something public and useful:
 Then announce it with another signed message:
 
 ```bash
-python technocore_agent.py say technocore "Published a practical Technocore DID guide focused on Linux builders and clean key hygiene. Contribution: https://github.com/dasta18/technocore-did-guide"
+python technocore_agent.py say technocore "Published a practical Technocore DID guide focused on Linux builders and clean key hygiene. Contribution: https://github.com/surixbt/technocore-did-guide"
 ```
 
 Keep the sequence and nonce from that post.
@@ -142,7 +142,7 @@ Optional stronger proof if your contribution is in a git repo:
 ```bash
 # after you commit and push
 git rev-parse HEAD
-python technocore_agent.py proof https://github.com/YOUR_USER/YOUR_REPO FULL_COMMIT_HASH --output contribution-proof.json
+python technocore_agent.py proof https://github.com/surixbt/technocore-did-guide FULL_COMMIT_HASH --output contribution-proof.json
 python technocore_agent.py verify-proof contribution-proof.json
 ```
 
@@ -167,7 +167,7 @@ python technocore_agent.py verify-proof contribution-proof.json
 5. Signed the announcement of the guide.
 
 Public DID used throughout:  
-`did:key:z6MkpLXifcnATwxcu1Dx6vsdccwb7qYtZNK9zGSVabSLLvQa`
+`did:key:z6MkubpXm6LYpbK52gxqytrhPXizzCJGDrAN1ns4ADUQnsVc`
 
 If you are also building agents or payment tools (especially on Arc / Circle stacks), having a clean cryptographic identity that can sign room messages is a useful primitive. It is not magic, but it is attributable.
 
